@@ -1,0 +1,941 @@
+#!/bin/env bash
+
+# to do
+# change the exec dirs to be more orgnized
+# add linux, MacOS, BSD, unix, OS/2, DOS options
+# add colouring
+# decide if i want dmenu to be virticle or horizontal
+# make launch script (copy and paste this and add a sub menu to each if statement with these options if windows: vnc, .sh ;;, spicy, these if not: ssh, vnc)
+# add varables for vm base dir, etc
+
+vm_dir="/mnt/4TB/qemu-vms"
+dmenu_sb="#66f9fe"
+dmenu_nb="#fea6f5"
+dmenu_nf="#000000"
+dmenu_sf="#000000"
+parent_choices=$(echo -e "Windows VM's\nLinux VM's\nBSD VM's\nMacOS VM's\nDOS VM's\nCTF VM's\nProduction VM's\nMobile OS VM's" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "enter a VM category")
+case ${parent_choices} in "Windows VM's")
+	child_choices=$(echo -e "Windows 1.0\nWindows 1.02\nWindows 1.03\nWindows 1.04\nWindows 2.03\nWindows 2.10\nWindows 2.11\nWindows 3.0\nWindows 3.1\nWindows NT 3.1\nWindows for workgroups 3.11\nWindows 3.2\n Windows NT 3.5\n Windows NT 3.51\nWindows 95\nWindows NT 4.0\n Windows 98\nWindows 2000\nWindows ME\nWindows XP\nWindows XP professionsal x64 edition\nWindows Vista\nWindows 7\nWindows 8\nWindows 8.1\nWindows 10\nWindows NT 3.5\n Windows NT 3.51\nWindows NT 4.0\n Windows 2000 server\nWindows server 2003\nWindows server 2003 R2\nWindows server 2008\nWindows server 2008 R2\nWindows server 2012\nWindows server 2012 R2\nWindows server 2016\nWindows server 2019" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a VM name:")
+
+
+	case ${child_choices} in
+		"Windows 1.0")	
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Windows/windowsXP/start-winxp.sh ;;	
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		
+		"Windows 1.02") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Windows/Windows7/start-win7.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Windows 1.03") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Windows/Windows10/start-win10.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Windows 1.04") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Windows/windowsXP/start-winxp.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Windows 2.03") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Windows/Windows7/start-win7.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Windows 2.10") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Windows/Windows10/start-win10.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Windows 2.11") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Windows/windowsXP/start-winxp.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Windows 3.0") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Windows/Windows7/start-win7.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Windows 3.1") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Windows/Windows10/start-win10.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Windows NT 3.1") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Windows/windowsXP/start-winxp.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Windows for workroups 3.11") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Windows/Windows7/start-win7.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Windows 3.2") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Windows/Windows10/start-win10.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Windows NT 3.5") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Windows/windowsXP/start-winxp.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Windows NT 3.51") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Windows/Windows7/start-win7.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Windows 95") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Windows/Windows10/start-win10.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Windows NT 4.0") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Windows/windowsXP/start-winxp.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Windows 98") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Windows/Windows7/start-win7.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Windows 2000") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Windows/Windows10/start-win10.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Windows ME") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Windows/windowsXP/start-winxp.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Windows XP") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Windows/Windows7/start-win7.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Windows XP professional x64 edition") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Windows/Windows10/start-win10.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Windows Vista") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Windows/windowsXP/start-winxp.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Windows 7") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Windows/Windows7/start-win7.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Windows 8") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Windows/Windows10/start-win10.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Windows 8.1") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Windows/windowsXP/start-winxp.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Windows 10 ") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Windows/Windows7/start-win7.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Windows NT 3.5") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Windows/Windows10/start-win10.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Windows NT 3.51") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Windows/windowsXP/start-winxp.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Windows NT 4.0") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Windows/Windows7/start-win7.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Windows 2000") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Windows/Windows10/start-win10.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Windows 2000 R2") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Windows/windowsXP/start-winxp.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Windows 2003") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Windows/Windows7/start-win7.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Windows 2003 R2") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Windows/Windows10/start-win10.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Windows 2008") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Windows/windowsXP/start-winxp.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Windows 2008 R2") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Windows/Windows7/start-win7.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Windows 2012") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Windows/Windows-server-2012/start-winserver2012.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Windows 2016") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Windows/windows-server-2016/start-winserver2016.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Windows 2019") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Windows/Windows-server-2019/start-winserver2019.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		*) ;;
+	esac
+	;;
+"Linux VM's")
+
+
+	child_choices=$(echo -e "Void\nPentoo\nArch\nraspbien\nslackware" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a VM name:")
+
+	case ${child_choices} in
+		"Void") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/Linux/Void/start-void.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		*) ;;
+	esac
+	;;
+
+
+"BSD VM's")
+
+	child_choices=$(echo -e "FreeBSD\nOpenBSD\nNetBSD\nDrangonflyBSD" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a VM name:")
+	
+	case ${child_choices} in
+		"FreeBSD") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/BSD/FreeBSD/start-freebsd.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"OpenBSD") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/BSD/OpenBSD/start-openbsd.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"NetBSD") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/BSD/NetBSD/start-netbsd.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"DragonflyBSD") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/BSD/DragonflyBSD/start-dragonflybsd.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		*) ;;
+	esac
+	;;
+
+
+
+
+"MacOS VM's")
+	child_choices=$(echo -e "Kodiak\nCheetah\nJaguar\nPanter\nTiger\nLeopard\nSnow Lepoard\nLion\nMountain Lion\nMavericks\nYosemite\nEL Capitan\nSierra\nHigh Sierra\nMojave" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a VM name:")
+	
+	case ${child_choices} in 
+		"Kodiak") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/MacOS/Kodiak/start-kodiak.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"cheetah") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/MacOS/Cheetah/start-cheetah.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Jaguar") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/MacOS/Jaguar/start-jaguar.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Tiger") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/MacOS/Tiger/start-Tiger.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Leopard") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/MacOS/Leopard/start-leopard.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Snow Leopard") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/MacOS/Snow-Leopard/start-snow-leopard.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Lion") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/MacOS/Lion/start-Lion.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Mountain Lion") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/MacOS/Mountain-Lion/start-mountain-lion.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Mavericks") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/MacOS/Mavericks/start-mavericks.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Yosemite") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/MacOS/Yosemite/start-yosemite.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"El Capitan") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/MacOS/El-Capitan/start-el-capitan.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Sierra") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/MacOS/Sierra/start-sierra.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"High Sierra") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/MacOS/High-Sierra/start-high-sierra.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Mojave") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/MacOS/Mojave/start-mojave.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		*) ;;
+	esac
+	;;
+
+"DOS VM's")
+	child_choices=$(echo -e "86-DOS\nPC DOS 1.0\nPC DOS 1.1\nPC DOS 1.1\nPC DOS2.0\nPC DOS 2.1\nPC DOS 3.0\nPC DOS 3.1\nPC DOS 3.2\n PC DOS 3.3\n MS-DOS 3.31\n DR DOS 3.31\nIBM DOS 4.0\n DR DOS 5.0\nMS-DOS 5.0\nDR DOS 6.0\nMS-DOS 6.0\nPC DOS 6.1\n MS-DOS 6.0\nPC DOS 6.1\n MS-DOS 6.2\nMS-DOS 6.21\nPC DOS 6.3\nMS-DOS 6.22\nPC DOS 7.0" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a VM name:")
+	case ${child_choices} in
+		"86-DOS") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/dos/86-dos/start-86-dos.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"PC DOS 1.0") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/dos/pc-dos-1.0/start-pc-dos-1.0.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"PC DOS 1.1") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/dos/pc-dos-1.1/start-pc-dos-1.1.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"PC DOS2.0") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/dos/pc-dos-2.0/start-pc-dos- 2.0.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"PC DOS 2.1") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/dos/pc-dos-2.1/start-pc-dos-2.1.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"PC DOS 3.0") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/dos/pc-dos-3.0/start-pc-dos-3.0.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"PC DOS 3.1") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/dos/pc-dos-3.2/start-pc-dos-3.2.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"PC DOS 3.2") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/dos/pc-dos-3.3/start-pc-dos- 3.3.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"PC DOS 3.3") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/dos/pc-dos- 3.31/start-pc-dos-3.31.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"MS-DOS 3.31") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/dos/ms-dos-3.31/start-ms-dos-3.31.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"DR DOS 3.31") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/dos/dr-dos-3.31/start-dr-dos-3.31.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"IBM DOS 4.0") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/dos/ibm-dos-4.0/start-ibm-dos-4.0.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"DR DOS 5.0") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/dos/dr-dos-5.0/start-dr-dos-5.0.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"MS-DOS 5.0") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/dos/ms-dos-5.0/start-ms-dos-5.0.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"DR DOS 6.0") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/dos/dr-dos-6.0/start-dr-dos-6.0.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"MS-DOS 6.0") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/dos/ms-dos-6.0/start-ms-dos-6.0.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"PC DOS 6.1") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/dos/pc-dos-6.1/start-pc-dos-6.1.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"MS-DOS 6.2") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/dos/ms-dos-6.2/start-ms-dos-6.2.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"MS-DOS 6.21") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/dos/ms-dos-6.21/start-ms-dos-6.21.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"PC DOS 6.3") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/dos/pc-dos-6.3/start-pc-dos-6.3.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"MS-DOS 6.22") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/dos/ms-dos-6.22/start-ms-dos-6.22.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"PC DOS 7.0") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/dos/pc-dos-7.0/start-pc-dos-7.0.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+	*) ;;
+	esac
+	;;
+
+"CTF VM's")
+
+	child_choices=$(echo -e "JS safe 2.0" | dmenu -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -i -p "Enter a VM name:")
+	case ${child_choices} in
+		"JS safe 2.0") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/ctf/JS-safe-2.0/start-js-safe-2.0.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		*) ;;
+	esac
+	;;
+"Production VM's")
+	child_choices=$(echo -e "Webserver\nVPN 1\nVPN 2\nPFsense\npihole\nNAS\nFTP server\nMinecraft Server\nGmod Server\nARK server\npwn adcenture 3 server\ngit server\nTOR server" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a VM name:")
+	case ${child_choices} in 
+		"Webserver") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/production/webserver/start-webserver.sh ;; 
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"VPN 1") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/production/vpn-1/start-vpn-1.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"VPN 2") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/production/vpn-2/start-vpn-2.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"PFsense") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/production/pfsense/start-pfsense.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"pihole") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/production/pihole/start-pihole.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"NAS") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/production/nas/start-nas.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"FTP server") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/production/ftp-server/start-ftp-server.sh ;; 
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Minecraft server") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/production/minecraft-server/start-minecraft-server.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"Gmod server") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/production/gmod-server/start-gmod-server.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"ARK server") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/production/ark-server/start-ark-server.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"pwn adventure 3 server") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/production/pwn-adventure-3-server/start-pwn-adventure-3-server.sh ;;
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"git server") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/production/gitserver/start-git-server.sh ;; 
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		"TOR server") 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/production/torserver/start-tor-webserver.sh ;; 
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		*) ;;
+	esac
+	;;
+"Mobile OS VM's")
+
+	child_choices=$(echo -e "Andriod\nIOS" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a VM name:")
+	case ${child_choices} in
+		Andriod) 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/mobile/Andriod/start-andriod.sh ;; 
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		IOS) 
+			options=$(echo -e "start\nrestart\nkill" | dmenu -i -nb ${dmenu_nb} -sb ${dmenu_sb} -nf ${dmenu_nf} -sf ${dmenu_sf} -p "Enter a Option:")
+			case ${options} in
+				"start") exec ${vm_dir}/mobile/ios/start-ios.sh ;; 
+				 "restart") echo "resatrting..." ;;
+				 "kill") echo "shutting down vm ..." ;;
+				 *) ;;
+			 esac
+			  ;;
+		*) ;;
+	esac
+	;;
+	*) ;;
+esac
+

@@ -1,0 +1,32 @@
+#!/bin/bash
+file=$(readlink -f "$1")
+dir=$(dirname "$file")
+base="${file%.*}"
+shebang=$(sed -n 1p "$file")
+cd "$dir" || exit
+
+shebangtest() {
+	case "$shebang" in
+		\#\!*) "$file" ;;
+		*) sent "$file" 2>/dev/null & ;;
+	esac
+}
+
+case "$file" in
+	*\.ms) refer -PS -e "$file" | groff -me -ms -kejpt -T pdf > "$base".pdf ;;
+	*\.mom) refer -PS -e "$file" | groff -mom -kejpt -T pdf > "$base".pdf ;;
+	*\.rmd) echo "require(rmarkdown); render('$file')" | R -q --vanilla ;;
+	*\.tex) textype "$file" ;;
+	*\.md) pandoc "$file" --pdf-engine=pdflatex -o "$base".pdf ;;
+	*config.h) make && sudo make install ;;
+        *\.c) cc "$file" -o "$base" && "$base" ;;
+	*\.py) python "$file" ;;
+	*\.go) go run "$file" ;;
+	*\.cpp) g++ "$file" -o "$base" && "$base" ;;
+	*\.java) javac "$file" && "$base" ;;
+	*\.html) $BROWSER "$file" ;;
+	*\.pl) perl "$file" ;;
+	*\.rb) ruby "$file" ;;
+	*\.vimrc) exit ;;
+	*) shebangtest ;;
+esac

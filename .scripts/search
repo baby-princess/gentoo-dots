@@ -1,0 +1,111 @@
+#!/bin/bash
+query=$(echo "." | dmenu -i -p "enter a search query") || exit 1
+
+search_enginge=$(echo -e "DuckDuckGo\nStartPage\nSearx.me\nQwant\nDisconnect-Search\nTORCH (TOR)\ncandl (TOR)\nNot evil (TOR)\nDuckDuckGO (TOR)\nAHIMA (TOR)nOneirun Russian Engine (TOR)\nSearX (TOR)\nGrams (TOR)\nDARK search (TOR)" | dmenu -i -p "select a search engine to use:")
+case $search_engine in
+	DuckDuckGo)
+		if [[ $query == "." ]]
+		then
+			$BROWSER "https://duckduckgo.com"
+		else
+			$BROWSER "https://duckduckgo.com/?q=$query&t=ffab&atb=v1-1"
+	fi
+	;;
+	StartPageSearx.me) 
+		if [[ $query == "." ]]
+	then
+		$BROWSER "https://duckduckgo.com"
+	else
+		$BROWSER "https://duckduckgo.com/?q=$query&t=ffab&atb=v1-1"
+	fi	
+		;;
+	Qwant)
+	if [[ $query == "." ]]
+	then
+		$BROWSER "https://duckduckgo.com"
+	else
+		$BROWSER "https://duckduckgo.com/?q=$query&t=ffab&atb=v1-1"
+	fi
+;;
+	Disconnect-Search)	
+	if [[ $query == "." ]]
+	then
+		$BROWSER "https://duckduckgo.com"
+	else
+		$BROWSER "https://duckduckgo.com/?q=$query&t=ffab&atb=v1-1"
+	fi
+	;;
+TORCH\ \(TOR\))
+	if [[ $query == "." ]]
+	then
+		$BROWSER "https://duckduckgo.com"
+	else
+		$BROWSER "https://duckduckgo.com/?q=$query&t=ffab&atb=v1-1"
+	fi 
+	;;
+candle \(TOR\))
+	if [[ $query == "." ]]
+	then
+		$BROWSER "https://duckduckgo.com"
+	else
+		$BROWSER "https://duckduckgo.com/?q=$query&t=ffab&atb=v1-1"
+fi
+	;;
+Not evil \(TOR\)) 
+	if [[ $query == "." ]]
+	then
+		$BROWSER "https://duckduckgo.com"
+	else
+		$BROWSER "https://duckduckgo.com/?q=$query&t=ffab&atb=v1-1"
+	fi
+	;;
+DuckDuckGO \(TOR\))
+	if [[ $query == "." ]]
+	then
+		$BROWSER "https://duckduckgo.com"
+	else
+		$BROWSER "https://duckduckgo.com/?q=$query&t=ffab&atb=v1-1"
+	fi
+	;;
+AHIMA \(TOR\))
+	if [[ $query == "." ]]
+	then
+		$BROWSER "https://duckduckgo.com"
+	else
+		$BROWSER "https://duckduckgo.com/?q=$query&t=ffab&atb=v1-1"
+	fi
+	;;
+Oneirun Russian Engine \(TOR\))
+	if [[ $query == "." ]]
+	then
+		$BROWSER "https://duckduckgo.com"
+	else
+		$BROWSER "https://duckduckgo.com/?q=$query&t=ffab&atb=v1-1"
+	fi
+	;;
+SearX \(TOR\))
+	if [[ $query == "." ]]
+	then
+		$BROWSER "https://duckduckgo.com"
+	else
+		$BROWSER "https://duckduckgo.com/?q=$query&t=ffab&atb=v1-1"
+	fi
+	;;
+Grams \(TOR\))
+	if [[ $query == "." ]]
+	then
+		$BROWSER "https://duckduckgo.com"
+	else
+		$BROWSER "https://duckduckgo.com/?q=$query&t=ffab&atb=v1-1"
+	fi
+	;;
+DARK search \(TOR\))
+	if [[ $query == "." ]]
+	then
+		$BROWSER "https://duckduckgo.com"
+	else
+		$BROWSER "https://duckduckgo.com/?q=$query&t=ffab&atb=v1-1"
+	fi
+	;;
+*) break ;;
+esac

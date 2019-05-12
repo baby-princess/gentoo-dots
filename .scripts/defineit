@@ -1,0 +1,8 @@
+#!/bin/bash
+option=$(echo "📖" | dmenu -i -p "Type a term to define:") || exit 1
+if [[ ${option} == "📖" ]]
+then
+$BROWER "https://www.urbandictonary.com/"
+else
+$BROWSER "https://www.urbandictionary.com/define.php?term=${option}"
+fi

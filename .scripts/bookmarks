@@ -1,0 +1,41 @@
+#!/bin/bash
+
+main_category=$(echo -e "stores\nebooks\nwork related\nmail\nservices\nmedia\nchans_subs\nother" | dmenu -i -p "please choose a category:")
+case $main_category in
+	stores) 
+		shop_category=$(echo -e "regular_shops\ngroceries\nhealth_shops\nvape_stores\ngreen_stores" | dmenu -i -p "please choose a category:")
+		case $shop_category in
+			regular_shops) shop=$(echo -e "costco\nebay\nfreecycle\nfreegle" | dmenu -i -p "please choose a site to go to:")
+				case $shop in
+					costco) $BROSWER "costco.com" ;;
+					*) ;;
+				esac
+				;;
+			groceries) echo -e "asda\ntesco\nmorrisions\nlidl\naldi";;
+			health_shops) echo -e "holland_and_barret\ngrape_tree_foods\nboots" ;;
+			bab_stores) echo -e "mothercare\nlittleforbig\nonsies_down_under\nlittles_laboratory\ncuddlz\nawwh_so_cute\nnappiesrus\nabdl_factory\nabdl_marketplace"  ;;
+			vape_stores) echo -e "mario_carts" ;;	
+			green_stores) echo "something" ;;
+			*) ;;
+		esac
+		;;
+	ebooks) echo ""| dmenu -i -p "please enter a ebook site you wish to go to:" ;;
+
+	http://www.allitebooks.com/ 
+	https://it-ebooks.info/ 
+	https://www.gutenberg.org/ 
+	https://www.free-ebooks.net/ 
+	https://www.free-ebooks.net/ 
+	https://free-ebooks.com/ 
+	https://www.bookrix.com/books.html 
+	https://manybooks.net/
+
+	work_related) echo "something";;
+	mail) echo "something";;
+	services) echo "something";;
+	media) echo "something";;
+	chans_subs) echo "something";;
+	other) echo "something";;
+	*) ;;
+esac
+	

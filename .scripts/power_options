@@ -1,0 +1,9 @@
+#!/bin/bash
+option=$(echo -e "shutdown\nreboot\nsleep\nlogout" | dmenu -i -p "please select a power option:")
+case $option in
+	shutdown) sudo shutdown -h now ;;
+	reboot) sudo reboot ;;
+	sleep) slock ;;
+	logout) sudo killall dwm ;;
+	*) ;;
+esac

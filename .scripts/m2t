@@ -1,0 +1,15 @@
+#!/bin/env bash
+#user definded vars
+torrent_dir="~/"
+output_dir=""
+
+
+#actul script
+while read magnetlink
+do
+	updated_magnet=(tr '_+' '__')
+name=(cut -f2 -d "&" updated_magnet)
+echo downloading
+Magnet_To_Torrent2.py -m "${magnetlink}" -o ${torrent_dir}/${name}
+rtorrent ${torrent_dir}/${name}.torrent ${output_dir}/${name}
+done < ~/.scripts/magnet_links

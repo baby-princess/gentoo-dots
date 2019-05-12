@@ -1,0 +1,8 @@
+#!/bin/bash
+
+find *.ogg | while read f
+do
+input="$f"
+ouput="${f%.*}.mp3"
+ffmpeg -y -i "$input" "$output"
+done

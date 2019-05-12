@@ -1,0 +1,9 @@
+#!/bin/bash
+return_opt=$(echo "::" | dmenu -i -p "Enter text to blockify" || exit 1)
+if [[ ${return_opt} == "::" ]]
+then
+echo "no text entered to blockify ish a sad day for discord memez"
+
+else
+echo "${return_opt}" | sed -E "s/([a-zA-Z])/:regional_indicator_\1: /g" | tr ' ' '      '  | xclip -selection c
+fi

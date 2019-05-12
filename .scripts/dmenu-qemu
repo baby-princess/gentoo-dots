@@ -1,0 +1,11 @@
+#!/bin/bash
+qemu_dir="/usr/local/bin/qemu-system"
+arch=$(du -a $qemu_dir* | awk '{print $2}' | awk -F "/" '{print $5}' | dmenu -i -p "please enter a arch to use")
+machine=$(${arch} -machine help | grep -Ev "Supported machines are:" | awk '{print $1}' | dmenu -i -p "please enter a machine type")
+cpu=$(${arch} -machine ${machine} -cpu help | sed -E '/Recognized CPUID flags:/,$d; /^\s*$/d' | grep -Ev "Available CPUs:" | awk '{print $2}' | dmenu -i -p "please enter a cpu type")
+#acceleration=$()
+
+nic=$(${arch} -nic help | grep -Ev "Available netdev backend types:" | dmenu -i -p "select a nic")
+
+soundhw=$(${arch} -soundhw help | grep -Ev "Valid sound card names|-soundhw all will enable all of the above" | sed '/^\s*$/d' | awk '{print $1}')
+echo "${arch} -machine ${machine} -cpu ${cpu}"

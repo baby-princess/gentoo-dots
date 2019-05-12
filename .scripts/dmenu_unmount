@@ -1,0 +1,45 @@
+#!/bin/sh
+unmountusb() {
+	[ -z "$drives" ] && exit
+	chosen=$(echo "$drives" | dmenu -i -p "Unmount which drive?" | awk '{print $1}')
+	[ -z "$chosen" ] && exit
+	sudo -A umount "$chosen" && pgrep -x dunst && notify-send -i "$PIX/usb.svg" "$chosen unmounted."
+	}
+
+unmountandroid() { \
+	chosen=$(awk '/simple-mtpfs/ {print $2}' /etc/mtab | dmenu -i -p "Unmount which device?")
+	[ -z "$chosen" ] && exit
+	sudo -A umount -l "$chosen" && pgrep -x dunst && notify-send -i "$PIX/android.svg" "$chosen unmounted."
+	}
+unmountidevice(){ \
+	chosen=$(mount | grep "ifuse" | awk '{print $3}' | dmenu -i -p "Unmount which iDevice?")
+	[ -z "$chosen" ] && exit
+	sudo -A umount -l "$chosen"
+}
+
+asktype() { \
+	case $(printf "USB\\nAndroid\\nIDevice" | dmenu -i -p "Unmount a USB drive, Android device or Idevice?") in
+		USB) unmountusb ;;
+		Android) unmountandroid ;;
+		IDevice) unmountidevice ;;
+	esac
+	}
+
+drives=$(lsblk -nrpo "name,type,size,mountpoint" | awk '$2=="part"&&$4!~/\/boot|\/home$|SWAP/&&length($4)>1{printf "%s (%s)\n",$4,$3}')
+
+if ! grep simple-mtpfs /etc/mtab; then
+	[ -z "$drives" ] 
+	drives=$(mount | grep ifuse | awk '{print $}')
+	[ -z "$drives" ] && echo "No drives to unmount." &&  exit
+	echo "Unmountable USB drive detected."
+	unmountusb
+else
+	if [ -z "$drives" ]
+	then
+		echo "Unmountable Android device detected."
+	       	unmountandroid
+	else
+		echo "Unmountable USB drive(s), Android device(s), or Idevice(s) detected."
+		asktype
+	fi
+fi

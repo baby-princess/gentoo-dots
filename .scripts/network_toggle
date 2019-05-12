@@ -1,0 +1,11 @@
+#!/bin/bash
+displays=$(xrandr --current | grep -Ev "disconnected" | grep -B 1 "*" | awk '{print $1}' | sed 1q)
+if [[ ${displays} == "HDMI2" ]]
+then
+sudo ifconfig -v wlp2s0 down
+fi
+
+if [[ ${displays} == "LVDS1" ]]
+then
+sudo ifconfig -v wlp2s0 up
+fi

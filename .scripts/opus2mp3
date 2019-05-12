@@ -1,0 +1,8 @@
+#!/bin/bash
+
+find *.opus | while read f
+do
+input="$f"
+output="${f%.*}.mp3"
+ffmpeg -y -i "$input" "$output"
+done

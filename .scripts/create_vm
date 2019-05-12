@@ -1,0 +1,131 @@
+#!/bin/bash
+dmenu_default_opts="dmenu -i -p"
+
+#if it matters i am using vim to edit this :)
+
+arch_select() {
+# this is based on qemu and dmenu to make a clean kinda UI interface for qemu
+arch=$(echo -e "aarch64\nalpha\narm\ncris\nhppa\ni386\nim32\nm68k\nmicroblaze\nmicroblazeel\nmips\nmips64\nmips64el\nmipsel\nmoxie\nnios2\nor1k\nppc\nppc64\nriscv32\nriscv64\ns390x\nsh4\nsh4eb\nsparc\nsparc64\ntricore\nunicore32\nx86_64\nxtensa\nxtensaeb" | ${dmenu_default_opts} "please seect a architecture:")
+case $arch in
+	aarch64) aarch64_machine_select() ;;
+	alpha) alpha_machine_select ;;
+	arm) arm_machine_select ;;
+	cris) cris_machine_select ;;
+	hppa) hppa_machine_select ;;
+	i386) i386_machine_select ;;
+	lm32) im32_machine_select ;;
+	microblaze) microblaze_machine_select ;;
+	microblazeel) microblazeel_machine_select ;;
+	mps) mps_machine_select ;;
+	mips) mips_machine_select ;;
+	mips64) mips64_machine_select ;;
+	mips64el) mips65el_machine_select ;;
+	mipsel) mipsel_machine_select ;;
+	moxie) moxie_machine_select ;;
+	nios2) nios2_machine_select ;;
+	or1k) or1k_machine_select ;;
+	ppc) ppc_machine_select ;;
+	ppc64) ppc64_machine_select ;;
+	riscv32) riscv32_machine_select ;;
+	riscv64) riscv64_macine_select ;;
+	s390x) s390x_machine_select ;;
+	#ill come back to these later, i don't feel like it right now :)
+	sh4) ;;
+	sh4eb) ;;
+	sparc) ;;
+	sparc64) ;;
+	tricore) ;;
+	unicore32) ;;
+	x86_64) x86_64_machine_select ;;
+	xtensa) ;;
+	xtensaeb) ;;
+	*) break ;;
+esac
+}
+aarch64_machine_select(){
+echo -e "akita\nast2500-evb\nborzoi\ncanon-a1100\ncheetah\ncollie\nconnex\ncubieboard\nemcraft-sf2\nhighbank\nimx25-pdk\nintegratorcp\nkzm\nlm3s6965evb\nlm3s811evb\nmainstone\nmcimx6ul-evk\nmcimx7d-sabre\nmicrobit\nmidway\nmps2-an385\nmps2-an505\nmps2-an511\nmps2-an521\nmusca-a\nmusca-b1\nmusicpal\nn800\nn810\nnetduino2\nnone\nnuri\npalmetto-bmc\nraspi2\nraspi3\nrealview-eb\nrealview-eb-mpcore\nrealview-pb-a8\nrealview-pbx-a9\nromulus-bmc\nsabrelite\nsmdkc210\nspitz\nsx1\nsx1-v1\nterrier\ntosa\nverdex\nversatileab\nversatilepb\nvexpress-a15\nvexpress-a9\nvirt-2.10\nvirt-2.11\nvirt-2.12\nvirt-2.6\nvirt-2.7\nvirt-2.8\nvirt-2.9\nvirt-3.0\nvirt-3.1\nvirt\nvirt-4.0\nwitherspoon-bmc\nxilinx-zynq-a9\nxlnx-versal-virt\nxlnx-zcu102\nz2" | ${dmenu_default_opts} "please select a machine:"
+case $machine_type in
+	akita) ;;
+	ast2500-evb) ;;
+	borzoi) ;;
+	canon-a1100) ;;
+	cheetah) ;;
+	collie) ;;
+	connex) ;;
+	cubieboard) ;;
+	emcraft-sf2) ;;
+	highbank) ;;
+	imx25-pdk) ;;
+	integratorcp) ;;
+	kzm) ;;
+	lm3s6965evb
+	lm3s811evb
+	mainstone
+	mcimx6ul-evk
+	mcimx7d-sabre
+	microbit
+	midway
+	mps2-an385
+	mps2-an505
+	mps2-an511
+	mps2-an521
+	musca-a
+	musca-b1
+	musicpal
+	n800
+	n810
+	netduino2
+	none
+	nuri
+	palmetto-bmc
+	raspi2
+	raspi3
+	realview-eb
+	realview-eb-mpcore
+	realview-pb-a8
+	realview-pbx-a9
+	romulus-bmc
+	sabrelite
+	smdkc210
+	spitz
+	sx1
+	sx1-v1
+	terrier
+	tosa
+	verdex
+	versatileab
+	versatilepb
+	vexpress-a15
+	vexpress-a9
+	virt-2.10
+	virt-2.11
+	virt-2.12
+	virt-2.6
+	virt-2.7
+	virt-2.8
+	virt-2.9
+	virt-3.0) ;;
+	virt-3.1) ;;
+	virt) ;;
+	virt-4.0) ;;
+	witherspoon-bmc) ;;
+	xilinx-zynq-a9) ;;
+	xlnx-versal-virt) ;;
+	xlnx-zcu102) ;;
+	z2) ;;
+	*) break ;;
+easc
+
+}
+
+OS=$(echo -e "Windows\nDOS\nLinux\nBSD\nMacOS\nAndriod\nIOS\nOther" | ${dmenu_default_opts} "please enter a OS type:")
+VM_mem=$(echo "." | ${dmenu_default_opts} "enter the amount of RAM you want followed by the unit (K, M or G):")
+x86_64_cpu() {
+	use_host_cpu=$(echo -e "Yes\nNo" | ${dmenu_default_opts} "would you like to use your host CPU?:")
+if [[ ${use_host_cpu} == "No" ]]
+then
+	guest_cpu=$(echo -e "486\nBroadwell\nBroadwell-IBRS\nBroadwell-noTSX\nBroadwell-noTSX-IBR\nCascadelake-Server\nConroe\nEPYC\nEPYC-IBPB\nHaswell\nHaswell-IBRS\nHaswell-noTSX\nHaswell-noTSX-IBRS\nIcelake-Client\nIcelake-Server\nIvyBridge\nIvyBridge-IBRS\nKnightsMill\nNehalem\nNehalem-IBRS\nOpteron_G1\nOpteron_G2\nOpteron_G3\nOpteron_G4\nOpteron_G5\nPenryn\nSandyBridge\nSandyBridge-IBRS\nSkylake-Client\nSkylake-Client-IBRS\nSkylake-Server\nSkylake-Server-IBRS\nWestmere\nWestmere-IBRS\nathlon\ncore2duo\ncoreduo\nkvm32\nkvm64\nn270\npentium\npentium2\npentium3\nphenom\nqemu32\nqemu64\nbase\nhost\nmax" | ${dmenu_default_opts} "Please select a cpu type:")
+fi
+}
+
+arch_select

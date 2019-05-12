@@ -1,0 +1,3 @@
+#!/bin/bash
+query=$1
+nhentai --search $query | grep -Ev "=|id|_" | sed "s/\[.*//g" | sed '/^\s*$/d' | awk '{print $1}'

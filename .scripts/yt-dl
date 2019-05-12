@@ -1,0 +1,7 @@
+#!/bin/env bash
+while read videolinks
+do
+	echo "downloalding $videolinks"
+	youtube-dl -x "${videolinks}"
+	echo "done downloading ${videolinks} have a nice day"
+done < ~/.config/youtube-dl-links

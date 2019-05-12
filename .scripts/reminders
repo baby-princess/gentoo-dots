@@ -1,0 +1,106 @@
+#!/bin/bash
+while true
+do
+current_date=$(date '%d-%m-%Y')
+current_day=$(date '%a')
+current_time=$(date '+%R')
+asignment_todo=$(cat ~/.config/assignment_due | head -n 1 | awk -F"\t" '{print $1}')
+asignment_due_date=$(cat ~/.config/assignment_due | head -n 1 | awk -F"\t" '{print $2}')
+todo_items=$(cat ~/.config/todo | head -n 1 | awk -F"\t" '{print $1}')
+todo_items_time=$(cat ~/.config/todo | head -n 1 | awk -F"\t" '{print $2}')
+todo_dates=$(cat ~/.config/todo | head -n 1 | awk -F"\t" '{print $3}')
+sleeptime=$(23:30)
+wakeup_time=$(06:00)
+get_dressed_time=$(06:02)
+breakfast_time=$(06:05)
+lunch_time=$(12:00)
+dinner_time=$(16:00)
+# desert_time=$(17:00)
+work_days=$(cat ~/.config/work_days | grep "${current_day}" | awk -F"\t" '{print $1}')
+work_days_start_time=$(cat ~/.config/work_days | grep "${current_day}" | awk -F"\t" '{print $2}')
+work_days_end_time=$(cat ~/.config/work_days | grep "${current_day}" | awk -F"\t" '{print $3}')
+college_days=$(cat ~/.config/college_days | grep "${current_day}" | awk -F"\t" '{print $1}')
+college_days_start=$(cat ~/.config/college_days | grep "${current_day}" | awk -F"\t" '{print $1}')
+college_days_end_times=$(cat ~/.config/college_days | grep "${current_day}" | awk -F"\t" '{print $1}')
+college_leave_time=$(07:17)
+# chores_todo=$(cat ~/.config/chores_list | head -n 1 | awk -F"\t" '{print $1}')
+# chore_start_times=$(cat ~/.config/chores_list | head -n 1 | awk -F"\t" '{print $2}')
+# chorse_end_time=$(cat ~/.config/chore_list | head -n 1 | awk -F"\t" '{print $3}')
+assignment_reminder_1=$(date -d '+7 days')
+assignment_reminder_2=$(date -d '+6 days')
+assignment_reminder_3=$(date -d '+5 days')
+assignment_reminder_4=$(date -d '+4 days')
+assignment_reminder_5=$(date -d '+3 days')
+assignment_reminder_6=$(date -d '+2 days')
+assignment_reminder_7=$(date -d '+1 days')
+todo_reminder=$(date -d '+1 days')
+
+
+
+
+if [[ ${current_time} == ${wakeup_time} ]]
+then
+echo "time to wakeup"
+fi
+
+if [[ ${current_time} == ${get_dressed_time} ]]
+then
+echo "time to get dressed"
+fi
+
+if [[ ${current_time} == "${breakfast_time}" ]]
+then
+echo "time for breakfast"
+fi
+if [[ ${current_time} == "${dinner_time}" ]]
+then
+echo "time for dinner"
+fi
+if [[ ${current_time} == "${lunch_time}"  && ${current_day} != ${college_day} && ${current_day} != ${work_day} ]]
+then
+echo "time for lunch"
+fi
+if [[ ${current_time} == "${desert_time}" ]]
+then
+echo "time for desert"
+fi
+if [[ ${current_time} == "${sleep_time}" ]]
+then
+echo "time to sleep"
+fi
+if [[ ${assingmnet_reminder_1} == "${assignment_due_date}" ]]
+then
+echo "you have an assignment due in 7 days better get started on it"
+fi
+if [[ ${assingmnet_reminder_2} == "${assignment_due_date}" ]]
+then
+echo "you have an assignment due in 6 days better get started on it"
+fi
+if [[ ${assingmnet_reminder_3} == "${assignment_due_date}" ]]
+then
+echo "you have an assignment due in 5 days better get started on it"
+fi
+if [[ ${assingmnet_reminder_4} == "${assignment_due_date}" ]]
+then
+echo "you have an assignment due in 4 days, better start it if you haven't already"
+fi
+if [[ ${assingmnet_reminder_5} == "${assignment_due_date}" ]]
+then
+echo "you have an assignment due in 3 days, keep at it"
+fi
+if [[ ${assingmnet_reminder_6} == "${assignment_due_date}" ]]
+then
+echo "you have an assignment due in 2 days, comeon you can do it"
+fi
+if [[ ${assingmnet_reminder_7} == "${assignment_due_date}" ]]
+then
+echo "you have an assignment due tommorow, better finish it up, as best as you can now"
+fi
+if [[ ${current_date} == "${assignment_due_date}" ]]
+then
+echo "you have an assignment due in today, today is the final push you've got this mate, then you can be free"
+fi
+
+
+sleep 60
+done

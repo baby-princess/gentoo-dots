@@ -1,0 +1,26 @@
+#!/bin/bash
+
+magnet_dir=$HOME
+magnet_link_list="$HOME/.scripts/magnet_links"
+
+# If not(!) executable(-e)
+if [[ ! -e /usr/bin/pirate-get ]]
+then
+    # " evaluates $variables within the string and returns. ' returns the string
+    # Echo to stderr
+    &>2 echo 'missing pirate get...'
+    &>2 echo 'please clone this repo \"git clone https://github.com/vikstrous/pirate-get.git"'
+    &>2 echo 'and cd to it, then run "python setup.py build;sudo python build.py install"'
+    exit 1
+fi 
+
+# Need to cd cuz no can 'ls "$dir/*.something" for some reason
+cd $magnet_dir
+
+
+for file in *.magnet    
+do
+	echo "$file"
+    cat "$file" >> $magnet_link_list &&  rm -rf "$file"
+     
+done

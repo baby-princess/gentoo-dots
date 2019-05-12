@@ -1,0 +1,11 @@
+#!/bin/bash
+choice=$(echo "🔴" | dmenu -i -p "Search youtube") || exit 1
+
+if [[ "${choice}" == "🔴" ]]
+then
+	st fish -c youtube-viewer
+else
+
+	echo ${choice}
+	st fish -c youtube-viewer "$choice"
+fi
