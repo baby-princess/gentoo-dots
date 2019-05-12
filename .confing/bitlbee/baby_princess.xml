@@ -1,0 +1,15 @@
+<user password="" nick="baby_princess" version="1">
+	<setting name="last_version">197889</setting>
+	<account protocol="discord" handle="" password="" autoconnect="true" tag="discord">
+		<setting name="auto_join">true</setting>
+		<setting name="away">being a bab on IRC</setting>
+		<setting name="max_backlog">40</setting>
+		<setting name="never_offline">true</setting>
+		<setting name="send_acks">false</setting>
+		<setting name="server_prefix_len">0</setting>
+		<setting name="token_cache"></setting>
+	</account>
+	<channel name="&amp;bitlbee" type="control">
+		<setting name="auto_join">true</setting>
+	</channel>
+</user>
