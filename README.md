@@ -107,4 +107,4 @@ P - package manager ( in this case portage)
 | nerdtree | provides a nicer file browser | https://github.com/scrooloose/nerdtree |
 | vim-ps1 | syntax suport for powershell | https://github.com/PProvost/vim-ps1 |
 | vim-cmus | allows me to control cmus from vim | https://github.com/azadkuh/vim-cmus |
-| discord-nvim | provides rich presitance for neovim in discord ( will be removing as i no longer use the officla client) | https://dgithub.com/aurieh/discord.nvim |
+| discord-nvim | provides rich presitance for neovim in discord ( will be removing as i no longer use the offical client) | https://dgithub.com/aurieh/discord.nvim |
